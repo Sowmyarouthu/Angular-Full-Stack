@@ -4,14 +4,24 @@ abstract class BaseCtrl {
 
   // Get all
   getAll = (req, res) => {
-    console.log("GetALL");
+    
     this.model.find({},(err, docs) => {
       console.log("GetALL",err,docs);
 
       if (err) { return console.error(err); }
       res.status(200).json(docs);
     });
-  }
+  }// 
+ 
+  getcarsbyname = (req, res) => {
+    console.log(req.params.name);
+    this.model.find({make: req.params.name},(err, docs) => {
+      console.log("GetALL",err,docs);
+
+      if (err) { return console.error(err); }
+      res.status(200).json(docs);
+    });
+  }// 
 
   // Count all
   count = (req, res) => {

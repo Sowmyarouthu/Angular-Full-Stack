@@ -72,7 +72,7 @@ export class TeslaComponent implements OnInit {
 
 
   getCars() {
-    this.carService.getCars().subscribe(
+    this.carService.getCars(this.make.value).subscribe(
       data => this.cars = data,
       error => console.log(error),
       () => this.isLoading = false

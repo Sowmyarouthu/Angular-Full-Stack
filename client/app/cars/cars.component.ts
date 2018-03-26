@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import {ActivatedRoute} from '@angular/router';
 import { CarService } from '../services/car.service';
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Car } from '../shared/models/car.model';
@@ -12,6 +12,7 @@ import { Car } from '../shared/models/car.model';
 })
 export class CarsComponent implements OnInit {
 
+ name : string;
   car = new Car();
   cars: Car[] = [];
   isLoading = true;
@@ -32,10 +33,17 @@ export class CarsComponent implements OnInit {
 
   constructor(private carService: CarService,
               private formBuilder: FormBuilder,
-              public toast: ToastComponent) { }
+              public toast: ToastComponent,
+              private route :ActivatedRoute) { }
 
   ngOnInit() {
-    this.getCars();
+  
+    this.route.params.subscribe(params => {
+      this.name = params['id']; // (+) converts string 'id' to a number
+    console.log(this.name);
+    this.getCars(this.name);
+      // In a real app: dispatch action to load the details here.
+   });
     this.addCarForm = this.formBuilder.group({
       modelname: this.modelname,
       year: this.year,
@@ -44,6 +52,8 @@ export class CarsComponent implements OnInit {
       make: this.make,
       category: this.category,
     });
+   
+    
   //  this.dropdownList = [
   //                             {"id":1,"itemName":"UnitedStates"},
   //                             {"id":2,"itemName":"Canada"},
@@ -71,14 +81,15 @@ export class CarsComponent implements OnInit {
 
 
 
-  getCars() {
-    this.carService.getCars().subscribe(
+  getCars(name: string) {
+    console.log(name);
+    this.carService.getCars(name).subscribe(
       data => this.cars = data,
       error => console.log(error),
       () => this.isLoading = false
       
     );
-    console.log("cars");
+   
   }
 
   addCar() {
@@ -102,7 +113,7 @@ export class CarsComponent implements OnInit {
     this.car = new Car();
     this.toast.setMessage('item editing cancelled.', 'warning');
     // reload the cars to reset the editing
-    this.getCars();
+    this.getCars(this.name);
   }
 
   editCar(car: Car) {

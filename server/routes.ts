@@ -15,6 +15,7 @@ export default function setRoutes(app) {
   const catBreedCtrl = new CatBreedCtrl();
   // Cats
   router.route('/cars').get(carCtrl.getAll);
+  router.route('/cars/:name').get(carCtrl.getcarsbyname);
   router.route('/cars/count').get(carCtrl.count);
   router.route('/car').post(carCtrl.insert);
   router.route('/car/:id').get(carCtrl.get);

@@ -17,12 +17,12 @@
                 <span class="nav-item" style="color:#999999;"> <i class="fa fa-car"></i>Models</span>
                 <ul>
                     <li>
-                        <a routerLink="audi" class="nav-item nav-link" routerLinkActive="active">
+                        <a [routerLink]= "['cars', 'Audi']" class="nav-item nav-link" routerLinkActive="active">
                                 Audi
                          </a>
                     </li>
                     <li>
-                            <a routerLink="tesla" class="nav-item nav-link" routerLinkActive="active">
+                            <a [routerLink]= "['cars', 'Tesla']" class="nav-item nav-link" routerLinkActive="active">
                                    Tesla
                             </a>
                     </li>
@@ -42,6 +42,6 @@
         <router-outlet></router-outlet>
     </div>
     <!-- /#page-content-wrapper -->
-
+ 
 </div>
 <!-- /#wrapper -->

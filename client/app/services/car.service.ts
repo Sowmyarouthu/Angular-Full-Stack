@@ -9,14 +9,14 @@ export class CarService {
 
   constructor(private http: HttpClient) { }
 
-  // getCars(car: Car): Observable<Car[]> {
-  //   return this.http.get<Car[]>(`/api/car/${car.make}`);
-  // }
-
-  getCars(): Observable<Car[]> {
-    
-    return this.http.get<Car[]>('/api/cars');
+  getCars(make: string): Observable<Car[]> {
+    return this.http.get<Car[]>(`/api/cars/${make}`);
   }
+
+  // getCars(): Observable<Car[]> {
+    
+  //   return this.http.get<Car[]>('/api/cars');
+  // }
 
   countCars(): Observable<number> {
     return this.http.get<number>('/api/cars/count');
