@@ -14,7 +14,7 @@ export class CarService {
   // }
 
   getCars(): Observable<Car[]> {
-    return this.http.get<Car[]>('/api/car');
+    return this.http.get<Car[]>('/api/cars');
   }
 
   countCars(): Observable<number> {

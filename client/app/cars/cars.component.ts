@@ -21,8 +21,8 @@ export class CarsComponent implements OnInit {
   modelname = new FormControl('', Validators.required);
   year = new FormControl('', Validators.required);
   power = new FormControl('', Validators.required);
-  color = new FormControl([[], Validators.required]);
-  make = new FormControl([[], Validators.required]);
+  color = new FormControl('', Validators.required);
+  make = new FormControl('', Validators.required);
   category = new FormControl([[], Validators.required]);
 
 
@@ -76,7 +76,9 @@ export class CarsComponent implements OnInit {
       data => this.cars = data,
       error => console.log(error),
       () => this.isLoading = false
+      
     );
+    console.log("cars");
   }
 
   addCar() {
