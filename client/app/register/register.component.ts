@@ -7,7 +7,23 @@ import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  styles: [`
+  .registerbackground {
+      background-image: url("/assets/Images/registercar.png");
+      background-color: #cccccc;
+      background-size: cover;
+      height: 100vh;
+    }
+    .card {
+      position:absolute;
+      width: 500px;
+      margin: 0 auto;
+      top: 35%;
+      left: 15%;
+      right: 15%;
+    }
+  `]
 })
 export class RegisterComponent implements OnInit {
 

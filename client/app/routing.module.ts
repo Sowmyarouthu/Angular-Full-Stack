@@ -17,16 +17,16 @@ import { MasterComponent } from './master/master.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:'full'},
-  {path: 'master', component: MasterComponent, 
+  {path: 'main', component: MasterComponent, 
   children: [
     { path: 'about', component: AboutComponent},
     { path: 'dashboard', component: DashboardComponent},
     { path: 'cats', component: CatsComponent },  
-    { path: 'catbreed', component:CatsBreedComponent},
-    { path: 'register', component: RegisterComponent },
+    { path: 'catbreed', component:CatsBreedComponent}
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuardLogin] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'notfound', component: NotFoundComponent },

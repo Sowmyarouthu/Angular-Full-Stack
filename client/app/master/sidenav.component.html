@@ -4,14 +4,34 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li>
-                <a routerLink="cats" class="nav-item nav-link" routerLinkActive="active">
-                     Cats
-                  </a>
+                <a routerLink="about" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <i class="fa fa-home"></i> Home
+                </a>
             </li>
-            <li>    
-                  <a routerLink="catbreed" class="nav-item nav-link" routerLinkActive="active">
-                     Cat Breeds
-                  </a>
+            <li>
+                <a routerLink="dashboard" class="nav-item nav-link" routerLinkActive="active">
+                    <i class="fa fa-list"></i> Dashboard
+                </a>
+            </li>
+            <li>
+                <span class="nav-item" style="color:#999999;"> <i class="fa fa-car"></i>Models</span>
+                <ul>
+                    <li>
+                        <a routerLink="cats" class="nav-item nav-link" routerLinkActive="active">
+                                Audi
+                         </a>
+                    </li>
+                    <li>
+                            <a routerLink="catbreed" class="nav-item nav-link" routerLinkActive="active">
+                                   Tesla
+                            </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a routerLink="catbreed" class="nav-item nav-link" routerLinkActive="active">
+                        <i class="fa fa-phone-square"></i>Contact
+                 </a>
             </li>
         </ul>
     </div>
@@ -19,7 +39,7 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-       <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
     </div>
     <!-- /#page-content-wrapper -->
 
