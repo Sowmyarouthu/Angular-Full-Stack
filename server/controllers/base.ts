@@ -4,7 +4,10 @@ abstract class BaseCtrl {
 
   // Get all
   getAll = (req, res) => {
-    this.model.find({}, (err, docs) => {
+    console.log("GetALL");
+    this.model.find({},(err, docs) => {
+      console.log("GetALL",err,docs);
+
       if (err) { return console.error(err); }
       res.status(200).json(docs);
     });

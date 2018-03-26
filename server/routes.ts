@@ -1,25 +1,26 @@
 import * as express from 'express';
 
-import CatCtrl from './controllers/cat';
+import CarCtrl from './controllers/car';
 import CatBreedCtrl from './controllers/catbreed';
 import UserCtrl from './controllers/user';
-import Cat from './models/cat';
+import Car from './models/car';
 import User from './models/user';
 
 export default function setRoutes(app) {
 
   const router = express.Router();
 
-  const catCtrl = new CatCtrl();
+  const carCtrl = new CarCtrl();
   const userCtrl = new UserCtrl();
   const catBreedCtrl = new CatBreedCtrl();
   // Cats
-  router.route('/cats').get(catCtrl.getAll);
-  router.route('/cats/count').get(catCtrl.count);
-  router.route('/cat').post(catCtrl.insert);
-  router.route('/cat/:id').get(catCtrl.get);
-  router.route('/cat/:id').put(catCtrl.update);
-  router.route('/cat/:id').delete(catCtrl.delete);
+  router.route('/cars').get(carCtrl.getAll);
+  router.route('/cars/count').get(carCtrl.count);
+  router.route('/car').post(carCtrl.insert);
+  router.route('/car/:id').get(carCtrl.get);
+  router.route('/car/:id').put(carCtrl.update);
+  router.route('/car/:id').delete(carCtrl.delete);
+  
 
   // Users
   router.route('/login').post(userCtrl.login);

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { CatsComponent } from './cats/cats.component';
+import { CarsComponent } from './cars/cars.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +9,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { TeslaComponent } from './tesla/tesla.component';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { CatsBreedComponent } from './catsbreed/catsBreed.component';
@@ -23,8 +23,8 @@ const routes: Routes = [
     { path: '', redirectTo:'about', pathMatch:'full'},
     { path: 'about', component: AboutComponent},
     { path: 'dashboard', component: DashboardComponent},
-    { path: 'audi', component: CatsComponent },  
-    { path: 'tesla', component:CatsBreedComponent},
+    { path: 'audi', component: CarsComponent },  
+    { path: 'tesla', component:TeslaComponent},
     { path: 'contact', component: ContactsComponent },  
   ]},
   { path: 'login', component: LoginComponent },
