@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:'full'},
   {path: 'main', component: MasterComponent, 
   children: [
+    { path: '', redirectTo:'about', pathMatch:'full'},
     { path: 'about', component: AboutComponent},
     { path: 'dashboard', component: DashboardComponent},
     { path: 'audi', component: CatsComponent },  
