@@ -6,7 +6,7 @@ import { ToastComponent } from '../shared/toast/toast.component';
 import { Cat } from '../shared/models/cat.model';
 
 @Component({
-  selector: 'app-cats',
+  selector: 'app-cars',
   templateUrl: './cats.component.html',
   styleUrls: ['./cats.component.css']
 })
@@ -18,10 +18,13 @@ export class CatsComponent implements OnInit {
   isEditing = false;
 
   addCatForm: FormGroup;
-  name = new FormControl('', Validators.required);
-  age = new FormControl('', Validators.required);
-  weight = new FormControl('', Validators.required);
-  food = new FormControl([[], Validators.required]);
+  modelname = new FormControl('', Validators.required);
+  year = new FormControl('', Validators.required);
+  power = new FormControl('', Validators.required);
+  color = new FormControl([[], Validators.required]);
+  make = new FormControl([[], Validators.required]);
+  category = new FormControl([[], Validators.required]);
+
 
   dropdownList = [];
     selectedItems = [];
@@ -34,39 +37,37 @@ export class CatsComponent implements OnInit {
   ngOnInit() {
     this.getCats();
     this.addCatForm = this.formBuilder.group({
-      name: this.name,
-      age: this.age,
-      weight: this.weight,
-      food:this.food
+      modelname: this.modelname,
+      year: this.year,
+      power: this.power,
+      color:this.color,
+      make: this.make,
+      category: this.category,
     });
-   this.dropdownList = [
-                              {"id":1,"itemName":"Tuna"},
-                              {"id":2,"itemName":"Chicken"},
-                              {"id":3,"itemName":"Beef"},
-                              {"id":4,"itemName":"Grapes"},
-                              {"id":5,"itemName":"Raisin"},
-                              {"id":6,"itemName":"Avacado"},
-                              {"id":7,"itemName":"Turkey"},
-                              {"id":8,"itemName":"carrots"},
-                              {"id":9,"itemName":"Zucchini"},
-                              {"id":10,"itemName":"Lettuce"}
-                            ];
-  this.selectedItems = [
-                        {"id":2,"itemName":"Chicken"},
-                        {"id":3,"itemName":"Beef"},
-                        {"id":4,"itemName":"Grapes"},
-                        {"id":5,"itemName":"Raisin"},
-                        {"id":6,"itemName":"Avacado"},
-                      ];
+  //  this.dropdownList = [
+  //                             {"id":1,"itemName":"UnitedStates"},
+  //                             {"id":2,"itemName":"Canada"},
+  //                             {"id":3,"itemName":"India"},
+  //                             {"id":4,"itemName":"Australia"},
+  //                             {"id":5,"itemName":"Netherlands"},
+                              
+  //                           ];
+  // this.selectedItems = [
+  //                       {"id":2,"itemName":"Canada"},
+  //                       {"id":3,"itemName":"India"},
+  //                       {"id":4,"itemName":"Australia"},
+  //                       {"id":5,"itemName":"Netherlands"},
+  //                       {"id":6,"itemName":"UnitedStates"},
+  //                     ];
                     
-  this.dropdownSettings = { 
-                            text: " Select Food      ",
-                            selectAllText: 'Select All',
-                            unSelectAllText: 'UnSelect All',
-                            classes:"myclass custom-class",
-                            buttonClasses: 'btn btn-default btn-block'
-                          };   
-  }
+  // this.dropdownSettings = { 
+  //                           text: " Select Region      ",
+  //                           selectAllText: 'Select All',
+  //                           unSelectAllText: 'UnSelect All',
+  //                           classes:"myclass custom-class",
+  //                           buttonClasses: 'btn btn-default btn-block'
+  //                         };   
+   }
 
 
 

@@ -1,10 +1,12 @@
 import * as mongoose from 'mongoose';
 
 const catSchema = new mongoose.Schema({
-  name: String,
-  weight: Number,
-  age: Number,
-  food : []
+  modelname: String,
+  year: Number,
+  power: Number,
+  color:String,
+  make: String,
+  category: []
 });
 
 const Cat = mongoose.model('Cat', catSchema);
