@@ -3,7 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Current cars ({{cats.length}})</h4>
+  <h4 class="card-header">Current cars ({{cars.length}})</h4>
   <div class="card-block">
     <table class="table table-bordered table-hover">
       <thead class="thead-default">
@@ -16,19 +16,19 @@
           <th>Category</th>
         </tr>
       </thead>
-      <tbody *ngIf="cats.length === 0">
+      <tbody *ngIf="cars.length === 0">
         <tr>
           <td colspan="5">There are no cars in the DB. Add a new car below.</td>
         </tr>  
       </tbody>
       <tbody *ngIf="!isEditing">
-         <tr *ngFor="let cat of cats | paginate: { id:'foo', itemsPerPage: 5, currentPage: p }" >
-          <td>{{cat.modelname}}</td>
-          <td>{{cat.year}}</td>
-          <td>{{cat.power}}</td>
-          <td>{{cat.color}}</td>
-          <td>{{cat.make}}</td>
-          <td>{{cat.category}}</td>
+         <tr *ngFor="let car of cars | paginate: { id:'foo', itemsPerPage: 5, currentPage: p }" >
+          <td>{{car.modelname}}</td>
+          <td>{{car.year}}</td>
+          <td>{{car.power}}</td>
+          <td>{{car.color}}</td>
+          <td>{{car.make}}</td>
+          <td>{{car.category}}</td>
           <!-- <td><span *ngFor="let food of cat.food">{{food.itemName}}<br></span></td> -->
           <!-- <td>
             <button class="btn btn-sm btn-warning" (click)="enableEditing(cat)"><i class="fa fa-pencil"></i> Edit</button> 
@@ -39,24 +39,24 @@
       <tbody *ngIf="isEditing">
         <tr>
           <td colspan="5">
-            <form class="form-inline" #form="ngForm" (ngSubmit)="editCat(cat)" style="display:inline">
+            <form class="form-inline" #form="ngForm" (ngSubmit)="editCar(car)" style="display:inline">
               <div class="form-group">
-                <input class="form-control" type="text" name="modelname" [(ngModel)]="cat.modelname" placeholder="ModelName" required>
+                <input class="form-control" type="text" name="modelname" [(ngModel)]="car.modelname" placeholder="ModelName" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="number" name="year" [(ngModel)]="cat.year" placeholder="Year" min="0" required>
+                <input class="form-control" type="number" name="year" [(ngModel)]="car.year" placeholder="Year" min="0" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="number" name="power" [(ngModel)]="cat.power" placeholder="Power" step="any" min="0" required>
+                <input class="form-control" type="number" name="power" [(ngModel)]="car.power" placeholder="Power" step="any" min="0" required>
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" name="color" [(ngModel)]="cat.color" placeholder="Color" >
+                <input class="form-control" type="text" name="color" [(ngModel)]="car.color" placeholder="Color" >
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" name="make" [(ngModel)]="cat.make" placeholder="Make"  >
+                <input class="form-control" type="text" name="make" [(ngModel)]="car.make" placeholder="Make"  >
               </div>
               <div class="form-group">
-                <input class="form-control" type="text" name="category" [(ngModel)]="cat.category" placeholder="Category" >
+                <input class="form-control" type="text" name="category" [(ngModel)]="car.category" placeholder="Category" >
               </div>
               <!-- <div class="form-group" >
                   <angular2-multiselect  class="form-control" [data]="dropdownList" [(ngModel)]="cat.food" [settings]="dropdownSettings" [ngModelOptions]="{standalone: true}" >>
@@ -88,7 +88,7 @@
 <div class="card" *ngIf="!isEditing">
   <h4 class="card-header">Add new car</h4>
   <div class="card-block">
-    <form class="form-inline" [formGroup]="addCatForm" (ngSubmit)="addCat()" style="text-align:center">
+    <form class="form-inline" [formGroup]="addCarForm" (ngSubmit)="addCar()" style="text-align:center">
       <div class="form-group">
         <input class="form-control" type="text" name="modelname" formControlName="modelname" placeholder="ModelName">
       </div>
@@ -122,7 +122,7 @@
                                   (onDeSelectAll)="onDeSelectAll($event)" formControlName="food">>
             </angular2-multiselect>
       </div> -->
-      <button class="btn btn-primary" type="submit" [disabled]="!addCatForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!addCarForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
     </form>
   </div>
 </div>

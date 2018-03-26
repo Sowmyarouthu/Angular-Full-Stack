@@ -21,9 +21,9 @@ export class TeslaComponent implements OnInit {
   modelname = new FormControl('', Validators.required);
   year = new FormControl('', Validators.required);
   power = new FormControl('', Validators.required);
-  color = new FormControl([[], Validators.required]);
-  make = new FormControl([[], Validators.required]);
-  caregory = new FormControl([[], Validators.required]);
+  color = new FormControl('', Validators.required);
+  make = new FormControl('', Validators.required);
+  category = new FormControl([[], Validators.required]);
 
 
   dropdownList = [];
@@ -42,7 +42,7 @@ export class TeslaComponent implements OnInit {
       power: this.power,
       color:this.color,
       make: this.make,
-      caregory: this.caregory,
+      category: this.category,
     });
   //  this.dropdownList = [
   //                             {"id":1,"itemName":"UnitedStates"},
