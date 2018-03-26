@@ -1,7 +1,7 @@
 <app-loading [condition]="isLoading"></app-loading>
 
 <app-toast [message]="toast.message"></app-toast>
-
+<div class="container-fluid" style="padding-top:15px;">
 <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Current cars ({{cars.length}})</h4>
   <div class="card-block">
@@ -125,4 +125,5 @@
       <button class="btn btn-primary" type="submit" [disabled]="!addCarForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
     </form>
   </div>
+</div>
 </div>
