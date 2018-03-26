@@ -34,13 +34,19 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #2a4b80;
-  color: white;
+  background-color: #b6bfcb;
+  color: #062845;
   text-align: center;
 }
 .navbar {
   margin-bottom: 0px;
   padding-bottom: 0px;
   border-radius: 0px;
-  background-color: #274b80;
+  background-color: #b6bfcb;
+  box-shadow: 1px 2px 12px;
+}
+
+.card-shadow:hover{
+  box-shadow: 1px 2px 12px ghostwhite;
+
 }
