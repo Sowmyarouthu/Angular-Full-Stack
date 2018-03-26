@@ -25,6 +25,7 @@ import { CatBreedService } from './services/catBreed.service';
 import { SideNavComponent } from './master/sidenav.component';
 import { MasterComponent } from './master/master.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactsComponent } from './contact/contacts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CatsBreedComponent,
     SideNavComponent,
     MasterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ContactsComponent
   ],
   imports: [
     RoutingModule,

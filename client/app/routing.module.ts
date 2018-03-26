@@ -15,6 +15,7 @@ import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { CatsBreedComponent } from './catsbreed/catsBreed.component';
 import { MasterComponent } from './master/master.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactsComponent } from './contact/contacts.component';
 const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:'full'},
   {path: 'main', component: MasterComponent, 
@@ -22,7 +23,8 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent},
     { path: 'dashboard', component: DashboardComponent},
     { path: 'audi', component: CatsComponent },  
-    { path: 'tesla', component:CatsBreedComponent}
+    { path: 'tesla', component:CatsBreedComponent},
+    { path: 'contact', component: ContactsComponent },  
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
