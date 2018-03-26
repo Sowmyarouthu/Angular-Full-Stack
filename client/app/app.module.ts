@@ -27,6 +27,12 @@ import { SideNavComponent } from './master/sidenav.component';
 import { MasterComponent } from './master/master.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactsComponent } from './contact/contacts.component';
+import { FusionChartsModule } from 'angular2-fusioncharts';
+
+// Import FusionCharts library
+import * as FusionCharts from 'fusioncharts';
+// Import FusionCharts Charts module
+import * as Charts from 'fusioncharts/fusioncharts.charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +57,7 @@ import { ContactsComponent } from './contact/contacts.component';
     AngularMultiSelectModule,
     MultiselectDropdownModule,
     NgxPaginationModule,
+    FusionChartsModule.forRoot(FusionCharts, Charts)
   ],
   providers: [
     AuthService,

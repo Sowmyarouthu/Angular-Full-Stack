@@ -1,3 +1,18 @@
 <div class="container-fluid" style="padding: 0px;">
-    <h2> Welcome to Dashboard Page!</h2>
+    <div style="overflow-y: none;">
+    <fusioncharts
+    width="400" 
+    height="300"
+    type="column2d"
+    dataFormat="json"
+    [dataSource]="data" >
+  </fusioncharts>
+
+  <fusioncharts
+ width="500" 
+ height="400"
+ type="pie3d"
+ [dataSource]=dataSource >
+ </fusioncharts>
+</div>
 </div>

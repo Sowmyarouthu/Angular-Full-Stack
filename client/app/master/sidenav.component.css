@@ -36,7 +36,6 @@ body {
   #page-content-wrapper {
     width: 100%;
     position: absolute;
-    padding: 15px;
     padding-left: 255px;
   }
   
@@ -109,7 +108,6 @@ body {
       width: 250px;
     }
     #page-content-wrapper {
-        padding: 25px;
         padding-left: 255px;
         position: relative;
     }
