@@ -1,5 +1,6 @@
 .carousel-item {
-    background-size: cover;
-    object-fit: cover;
     height: 100% !important;
+}
+.d-block{
+    height: 100vh !important;
 }
