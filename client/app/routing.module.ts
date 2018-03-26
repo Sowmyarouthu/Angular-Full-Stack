@@ -21,8 +21,8 @@ const routes: Routes = [
   children: [
     { path: 'about', component: AboutComponent},
     { path: 'dashboard', component: DashboardComponent},
-    { path: 'cats', component: CatsComponent },  
-    { path: 'catbreed', component:CatsBreedComponent}
+    { path: 'audi', component: CatsComponent },  
+    { path: 'tesla', component:CatsBreedComponent}
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
