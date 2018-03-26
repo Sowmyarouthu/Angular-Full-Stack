@@ -30,24 +30,24 @@ export class DashboardComponent implements OnInit {
       slicingdistance: '15',
       showpercentvalues: '1',
       showpercentintooltip: '0',
-      plottooltext: 'Age group : $label Total visit : $datavalue',
+      plottooltext: 'Cars Sale : $label Total Sale : $datavalue',
       theme: 'ocean'
       },
       data: [
       {
-      label: 'Teenage',
+      label: 'Audi',
       value: '1250400'
       },
       {
-      label: 'Adult',
+      label: 'Tesla',
       value: '1463300'
       },
       {
-      label: 'Mid-age',
+      label: 'Benz',
       value: '1050700'
       },
       {
-      label: 'Senior',
+      label: 'BMW',
       value: '491000'
       }
       ]

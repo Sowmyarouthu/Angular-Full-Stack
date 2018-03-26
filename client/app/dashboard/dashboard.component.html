@@ -1,18 +1,21 @@
 <div class="container-fluid" style="padding: 0px;">
     <div style="overflow-y: none;">
+    <div style="display: inline;float:left;">   
     <fusioncharts
     width="400" 
     height="300"
-    type="column2d"
+    type="column3d"
     dataFormat="json"
     [dataSource]="data" >
   </fusioncharts>
-
+</div>  
+<div>
   <fusioncharts
  width="500" 
  height="400"
  type="pie3d"
  [dataSource]=dataSource >
  </fusioncharts>
+</div>  
 </div>
 </div>
