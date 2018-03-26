@@ -1,6 +1,9 @@
 export class Cat {
   _id?: string;
-  name?: string;
-  weight?: number;
-  age?: number;
+  modelname?: string;
+  year?: number;
+  power?: number;
+  color?: string;
+  category?: string;
+  make?: string;
 }
