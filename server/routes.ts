@@ -16,7 +16,9 @@ export default function setRoutes(app) {
   // Cats
   router.route('/cars').get(carCtrl.getAll);
   router.route('/cars/:name').get(carCtrl.getcarsbyname);
+  router.route('/cars/category').get(carCtrl.getcarsbycategory);
   router.route('/cars/count').get(carCtrl.count);
+  
   router.route('/car').post(carCtrl.insert);
   router.route('/car/:id').get(carCtrl.get);
   router.route('/car/:id').put(carCtrl.update);

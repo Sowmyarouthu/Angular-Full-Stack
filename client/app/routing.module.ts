@@ -5,11 +5,12 @@ import { CarsComponent } from './cars/cars.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+
 import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { TeslaComponent } from './tesla/tesla.component';
+
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { CatsBreedComponent } from './catsbreed/catsBreed.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent},
     { path: 'cars/:id', component: CarsComponent },  
     { path: 'tesla', component:CarsComponent},
-    { path: 'contact', component: ContactsComponent },  
+    { path: 'contact', component: ContactsComponent },
+     
   ]},
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },

@@ -1,27 +1,31 @@
 <div id="wrapper">
-
+        <!-- <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active" aria-current="page">Home</li>
+                </ol>
+              </nav> -->
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li routerLinkActive="active">
+        <ul class="sidebar-nav ">
+            <li routerLinkActive="active" >
                 <a routerLink="about" class="nav-item nav-link" routerLinkActive="active">
                     <i class="fa fa-home"></i> Home
                 </a>
             </li>
-            <li>
+            <li >
                 <a routerLink="dashboard" class="nav-item nav-link" routerLinkActive="active">
                     <i class="fa fa-tachometer"></i> Dashboard
                 </a>
             </li>
-            <li>
+            <li >
                 <span class="nav-item" style="color:#999999;"> <i class="fa fa-cube"></i> Models</span>
                 <ul style="list-style: none;">
-                    <li>
+                    <li >
                         <a [routerLink]= "['cars', 'Audi']" class="nav-item nav-link" routerLinkActive="active">
                                 <i class="fa fa-car"></i> Audi
                          </a>
                     </li>
-                    <li>
+                    <li >
                             <a [routerLink]= "['cars', 'Tesla']" class="nav-item nav-link" routerLinkActive="active">
                                     <i class="fa fa-car"></i> Tesla
                             </a>

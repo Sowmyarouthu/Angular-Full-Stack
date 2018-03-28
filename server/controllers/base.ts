@@ -23,6 +23,16 @@ abstract class BaseCtrl {
     });
   }// 
 
+  getcarsbycategory = (req, res) => {
+    console.log("Catergory=",req);
+    this.model.find({make: req.body},(err, docs) => {
+      console.log("GetCategoryList",err,docs);
+
+      if (err) { return console.error(err); }
+      res.status(200).json(docs);
+    });
+  }// 
+
   // Count all
   count = (req, res) => {
     this.model.count((err, count) => {
@@ -33,6 +43,7 @@ abstract class BaseCtrl {
 
   // Insert
   insert = (req, res) => {
+    console.log(req);
     const obj = new this.model(req.body);
     obj.save((err, item) => {
       // 11000 is the code for duplicate key error

@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastComponent } from '../shared/toast/toast.component';
-
+import {CarService} from '../services/car.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  category: string;
+  countcars: number;
   data: Object;
   dataSource: object;
-  constructor() {
+  constructor(private carservice : CarService) {
     this.data = {
       chart: { },
       data: [
@@ -52,7 +53,15 @@ export class DashboardComponent implements OnInit {
       }
       ]
       }
+      
+      this.carservice.getCarsbycategory().subscribe(
+        res=> {console.log("Dashboard",res)},
+        error => console.log(error)
+        
+      )
   }
+
+
 
   ngOnInit() {
     

@@ -10,7 +10,12 @@ export class CarService {
   constructor(private http: HttpClient) { }
 
   getCars(make: string): Observable<Car[]> {
+    console.log(make);
     return this.http.get<Car[]>(`/api/cars/${make}`);
+  }
+  getCarsbycategory(): Observable<Car[]> {
+    
+    return this.http.get<Car[]>('/api/cars/category');
   }
 
   // getCars(): Observable<Car[]> {
@@ -21,6 +26,7 @@ export class CarService {
   countCars(): Observable<number> {
     return this.http.get<number>('/api/cars/count');
   }
+ 
 
   addCar(car: Car): Observable<Car> {
     return this.http.post<Car>('/api/car', car);
@@ -38,4 +44,5 @@ export class CarService {
     return this.http.delete(`/api/car/${car._id}`, { responseType: 'text' });
   }
 
+  
 }

@@ -12,12 +12,12 @@ import { Car } from '../shared/models/car.model';
 })
 export class CarsComponent implements OnInit {
 
- name : string;
+  name : string;
   car = new Car();
   cars: Car[] = [];
   isLoading = true;
   isEditing = false;
-
+  filteredcars: Car[];
   addCarForm: FormGroup;
   modelname = new FormControl('', Validators.required);
   year = new FormControl('', Validators.required);
@@ -25,7 +25,7 @@ export class CarsComponent implements OnInit {
   color = new FormControl('', Validators.required);
   make = new FormControl('', Validators.required);
   category = new FormControl([[], Validators.required]);
-
+  _listfilter: string;
 
   dropdownList = [];
     selectedItems = [];
@@ -34,15 +34,18 @@ export class CarsComponent implements OnInit {
   constructor(private carService: CarService,
               private formBuilder: FormBuilder,
               public toast: ToastComponent,
-              private route :ActivatedRoute) { }
+              private route :ActivatedRoute) { 
+
+              //  this.filteredcars  = this.cars;
+               this._listfilter = "c";
+              }
 
   ngOnInit() {
   
     this.route.params.subscribe(params => {
-      this.name = params['id']; // (+) converts string 'id' to a number
-    console.log(this.name);
+      this.name = params['id']; 
     this.getCars(this.name);
-      // In a real app: dispatch action to load the details here.
+      
    });
     this.addCarForm = this.formBuilder.group({
       modelname: this.modelname,
@@ -79,9 +82,20 @@ export class CarsComponent implements OnInit {
   //                         };   
    }
 
+ get listfilter() {
+ return this._listfilter;
+ }
+ set listfilter(value: string) {
+   this._listfilter = value;
+   this.filteredcars = this.listfilter ? this.performfilter(this._listfilter): this.cars;
+ }
 
+ performfilter(filterby: string): Car[]{
+   filterby = filterby.toLocaleLowerCase();
+   return this.cars.filter((car: Car) => this.car.modelname.toLocaleLowerCase().indexOf(filterby)! == -1);
 
-  getCars(name: string) {
+ }
+    getCars(name: string) {
     console.log(name);
     this.carService.getCars(name).subscribe(
       data => this.cars = data,

@@ -1,6 +1,17 @@
 <app-loading [condition]="isLoading"></app-loading>
 
 <app-toast [message]="toast.message"></app-toast>
+<br><br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li>
+        <a class="breadcrumb-item active" aria-current="page" routerLink="about" >Home </a><a [routerLink]="name" > /{{name}} </a>
+      <!-- <li class="breadcrumb-item active" aria-current="page" routerLink="about" >Home </li><li  [routerLink]="name" > {{name}} </li> -->
+    </li>
+    </ol>
+  </nav>
+
+  Filter By: <input type="string" [value]="_listfilter" >
 <div class="container-fluid" style="    padding-top: 15px;">
 <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Current cars ({{cars.length}})</h4>
