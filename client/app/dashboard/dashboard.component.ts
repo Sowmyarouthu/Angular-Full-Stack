@@ -56,26 +56,27 @@ export class DashboardComponent implements OnInit {
       ]
       }
       
-      this.carservice.getCarsbycategory().subscribe(
-        res=> {this.respdata =res;
-        this.getCounts();
-        },
-        error => console.log(error)
-      )
+      
   }
 
 
 
   ngOnInit() {
+    this.carservice.getCarsbycategory().subscribe(
+      res=> {this.respdata =res;
+      this.getCounts();
+      },
+      error => console.log(error)
+    )
     
   }
 
   getCounts(){
     
-    this.carsobject.audicount = this.respdata.filter( x => x.year == 4).length;
+    this.carsobject.audicount = this.respdata.filter( x => x.category[0] === 'Sedan').length;
     this.carsobject.teslacount = this.respdata.filter( x => x.category[0] === 'SUV').length;
-    this.carsobject.benzcount = this.respdata.filter( x => x.category[0] === 'SUV').length;
-    this.carsobject.economycount = this.respdata.filter( x => x.category[0] === 'SUV').length;
+    this.carsobject.benzcount = this.respdata.filter( x => x.category[0] === 'Sport').length;
+    this.carsobject.economycount = this.respdata.filter( x => x.category[0] === 'Economy').length;
     console.log(this.carsobject);
   }
 }
