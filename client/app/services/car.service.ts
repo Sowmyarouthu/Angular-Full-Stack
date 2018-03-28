@@ -15,7 +15,7 @@ export class CarService {
   }
   getCarsbycategory(): Observable<Car[]> {
     
-    return this.http.get<Car[]>('/api/cars/category');
+    return this.http.get<Car[]>('/api/cars');
   }
 
   // getCars(): Observable<Car[]> {
