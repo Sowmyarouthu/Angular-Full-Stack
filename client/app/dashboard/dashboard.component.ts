@@ -16,8 +16,8 @@ export class DashboardComponent implements OnInit {
       chart: { },
       data: [
         {value: 500},
-        {value: 600},
-        {value: 700}
+        {value: 600}
+        
       ]
     };
     this.dataSource = {
@@ -36,19 +36,19 @@ export class DashboardComponent implements OnInit {
       },
       data: [
       {
-      label: 'Audi',
+      label: 'Sedan',
       value: '1250400'
       },
       {
-      label: 'Tesla',
+      label: 'SUV',
       value: '1463300'
       },
       {
-      label: 'Benz',
+      label: 'Sport',
       value: '1050700'
       },
       {
-      label: 'BMW',
+      label: 'Economy',
       value: '491000'
       }
       ]
